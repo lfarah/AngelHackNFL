@@ -1,0 +1,291 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C27FE9C11C79000000C3E7BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27FE9C01C79000000C3E7BC /* AppDelegate.swift */; };
+		C27FE9C31C79000000C3E7BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27FE9C21C79000000C3E7BC /* ViewController.swift */; };
+		C27FE9C61C79000000C3E7BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27FE9C41C79000000C3E7BC /* Main.storyboard */; };
+		C27FE9C81C79000000C3E7BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C27FE9C71C79000000C3E7BC /* Assets.xcassets */; };
+		C27FE9CB1C79000000C3E7BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27FE9C91C79000000C3E7BC /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C27FE9BD1C79000000C3E7BC /* NFLHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFLHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C27FE9C01C79000000C3E7BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C27FE9C21C79000000C3E7BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C27FE9C51C79000000C3E7BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C27FE9C71C79000000C3E7BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C27FE9CA1C79000000C3E7BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C27FE9CC1C79000000C3E7BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C27FE9BA1C79000000C3E7BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C27FE9B41C79000000C3E7BC = {
+			isa = PBXGroup;
+			children = (
+				C27FE9BF1C79000000C3E7BC /* NFLHackathon */,
+				C27FE9BE1C79000000C3E7BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C27FE9BE1C79000000C3E7BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C27FE9BD1C79000000C3E7BC /* NFLHackathon.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C27FE9BF1C79000000C3E7BC /* NFLHackathon */ = {
+			isa = PBXGroup;
+			children = (
+				C27FE9C01C79000000C3E7BC /* AppDelegate.swift */,
+				C27FE9C21C79000000C3E7BC /* ViewController.swift */,
+				C27FE9C41C79000000C3E7BC /* Main.storyboard */,
+				C27FE9C71C79000000C3E7BC /* Assets.xcassets */,
+				C27FE9C91C79000000C3E7BC /* LaunchScreen.storyboard */,
+				C27FE9CC1C79000000C3E7BC /* Info.plist */,
+			);
+			path = NFLHackathon;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C27FE9BC1C79000000C3E7BC /* NFLHackathon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C27FE9CF1C79000000C3E7BC /* Build configuration list for PBXNativeTarget "NFLHackathon" */;
+			buildPhases = (
+				C27FE9B91C79000000C3E7BC /* Sources */,
+				C27FE9BA1C79000000C3E7BC /* Frameworks */,
+				C27FE9BB1C79000000C3E7BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NFLHackathon;
+			productName = NFLHackathon;
+			productReference = C27FE9BD1C79000000C3E7BC /* NFLHackathon.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C27FE9B51C79000000C3E7BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Lucas Farah";
+				TargetAttributes = {
+					C27FE9BC1C79000000C3E7BC = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = C27FE9B81C79000000C3E7BC /* Build configuration list for PBXProject "NFLHackathon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C27FE9B41C79000000C3E7BC;
+			productRefGroup = C27FE9BE1C79000000C3E7BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C27FE9BC1C79000000C3E7BC /* NFLHackathon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C27FE9BB1C79000000C3E7BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C27FE9CB1C79000000C3E7BC /* LaunchScreen.storyboard in Resources */,
+				C27FE9C81C79000000C3E7BC /* Assets.xcassets in Resources */,
+				C27FE9C61C79000000C3E7BC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C27FE9B91C79000000C3E7BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C27FE9C31C79000000C3E7BC /* ViewController.swift in Sources */,
+				C27FE9C11C79000000C3E7BC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C27FE9C41C79000000C3E7BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C27FE9C51C79000000C3E7BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C27FE9C91C79000000C3E7BC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C27FE9CA1C79000000C3E7BC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C27FE9CD1C79000000C3E7BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C27FE9CE1C79000000C3E7BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C27FE9D01C79000000C3E7BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NFLHackathon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = farah.lucas.NFLHackathon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C27FE9D11C79000000C3E7BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NFLHackathon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = farah.lucas.NFLHackathon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C27FE9B81C79000000C3E7BC /* Build configuration list for PBXProject "NFLHackathon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C27FE9CD1C79000000C3E7BC /* Debug */,
+				C27FE9CE1C79000000C3E7BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C27FE9CF1C79000000C3E7BC /* Build configuration list for PBXNativeTarget "NFLHackathon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C27FE9D01C79000000C3E7BC /* Debug */,
+				C27FE9D11C79000000C3E7BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C27FE9B51C79000000C3E7BC /* Project object */;
+}
