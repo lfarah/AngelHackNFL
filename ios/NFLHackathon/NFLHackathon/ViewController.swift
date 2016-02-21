@@ -14,9 +14,20 @@ class ViewController: UIViewController {
   @IBOutlet weak var fieldView: UIView!
   @IBOutlet weak var lblTime: UILabel!
   @IBOutlet weak var shadowView: UIView!
+  
   @IBOutlet weak var barChart: UISlider!
+  @IBOutlet weak var bar2Chart: UISlider!
+  @IBOutlet weak var bar3Chart: UISlider!
+  
   @IBOutlet weak var barChart2: UISlider!
+  @IBOutlet weak var bar2Chart2: UISlider!
+  @IBOutlet weak var bar3Chart2: UISlider!
+  
+  
   @IBOutlet weak var barChart3: UISlider!
+  @IBOutlet weak var bar2Chart3: UISlider!
+  @IBOutlet weak var bar3Chart3: UISlider!
+  
   @IBOutlet weak var lblPercentagr: UILabel!
   @IBOutlet weak var lblPercentagr2: UILabel!
   
@@ -47,52 +58,57 @@ class ViewController: UIViewController {
     //6.141666667
     //7.373358349
     
-    
     parsePlay(0)
-//    lblTime.setCornerRadius(radius: 10)
-//    lblTime.addBorder(width: 3, color: .whiteColor())
     
-//    self.viewSliders.setCornerRadius(radius: 10)
-//    self.viewSliders.addBorder(width: 4, color: .whiteColor())
-//    let shadowPath = UIBezierPath(rect: self.viewSliders.bounds)
-//    self.viewSliders.layer.masksToBounds = false
-//    self.viewSliders.layer.shadowColor = UIColor.blackColor().CGColor
-//    self.viewSliders.layer.shadowOffset = CGSize(width: 2, height: 2)
-//    self.viewSliders.layer.shadowOpacity = 0.2
-//    self.viewSliders.layer.shadowPath = shadowPath.CGPath
-
+    let probabilities = readAlgorithm(0)
+    self.viewSliders.hidden = false
+    self.changeSliderTo((probabilities["1"]!["probability"]?.doubleValue)!)
+    self.changeSlider2To((probabilities["2"]!["probability"]?.doubleValue)!)
+    self.changeSlider3To((probabilities["3"]!["probability"]?.doubleValue)!)
+    
+    //    lblTime.setCornerRadius(radius: 10)
+    //    lblTime.addBorder(width: 3, color: .whiteColor())
+    
+    //    self.viewSliders.setCornerRadius(radius: 10)
+    //    self.viewSliders.addBorder(width: 4, color: .whiteColor())
+    //    let shadowPath = UIBezierPath(rect: self.viewSliders.bounds)
+    //    self.viewSliders.layer.masksToBounds = false
+    //    self.viewSliders.layer.shadowColor = UIColor.blackColor().CGColor
+    //    self.viewSliders.layer.shadowOffset = CGSize(width: 2, height: 2)
+    //    self.viewSliders.layer.shadowOpacity = 0.2
+    //    self.viewSliders.layer.shadowPath = shadowPath.CGPath
+    
   }
   
   @IBOutlet weak var showHideSliders: UIButton!
   
-  func simulateSliders()
-  {
-    let arrSliderValue = [0.4,0.9,0.1,0.3,0.2,0.8]
-    let arrSliderValue2 = [0.9,0.4,0.1,0.5,0.7,0.2]
-    let arrSliderValue3 = [0.6,0.3,0.1,0.1,0.8,0.5]
-    
-    var count = 0
-    self.timerSliders = NSTimer.runThisEvery(seconds: 2) { (timer) -> Void in
-      if count < arrSliderValue.count
-      {
-      self.changeSliderTo(arrSliderValue[count])
-        self.changeSlider2To(arrSliderValue2[count])
-        self.changeSlider3To(arrSliderValue3[count])
-        
-        count++
-      }
-      else
-      {
-        self.timerSliders.invalidate()
-      }
-    }
-  }
+  //  func simulateSliders()
+  //  {
+  //    let arrSliderValue = [0.4,0.9,0.1,0.3,0.2,0.8]
+  //    let arrSliderValue2 = [0.9,0.4,0.1,0.5,0.7,0.2]
+  //    let arrSliderValue3 = [0.6,0.3,0.1,0.1,0.8,0.5]
+  //    
+  //    var count = 0
+  //    self.timerSliders = NSTimer.runThisEvery(seconds: 2) { (timer) -> Void in
+  //      if count < arrSliderValue.count
+  //      {
+  //        self.changeSliderTo(arrSliderValue[count])
+  //        self.changeSlider2To(arrSliderValue2[count])
+  //        self.changeSlider3To(arrSliderValue3[count])
+  //        
+  //        count++
+  //      }
+  //      else
+  //      {
+  //        self.timerSliders.invalidate()
+  //      }
+  //    }
+  //  }
   @IBAction func showHideSliders(sender: AnyObject)
   {
     if self.viewSliders.hidden
     {
       self.viewSliders.hidden = false
-      simulateSliders()
       showHideSliders.setBackgroundImage(UIImage())
     }
     else
@@ -106,11 +122,16 @@ class ViewController: UIViewController {
   {
     UIView.animateWithDuration(0.1, animations: { () -> Void in
       self.barChart.setValue(self.barChart.value, animated: true)
+      self.bar2Chart.setValue(self.bar2Chart.value, animated: true)
+      self.bar3Chart.setValue(self.bar3Chart.value, animated: true)
       
       }) { (bol) -> Void in
         UIView.animateWithDuration(1, animations: { () -> Void in
           self.barChart.setValue(Float(value), animated: true)
-          self.lblPercentagr.text = "\(self.barChart.value * 100)%"
+          self.bar2Chart.setValue(Float(value), animated: true)
+          self.bar3Chart.setValue(Float(value), animated: true)
+          
+          self.lblPercentagr.text = "\(self.barChart.value)%"
           }, completion: nil)
     }
   }
@@ -118,11 +139,16 @@ class ViewController: UIViewController {
   {
     UIView.animateWithDuration(0.1, animations: { () -> Void in
       self.barChart2.setValue(self.barChart2.value, animated: true)
+      self.bar2Chart2.setValue(self.bar2Chart2.value, animated: true)
+      self.bar3Chart2.setValue(self.bar3Chart2.value, animated: true)
       
       }) { (bol) -> Void in
         UIView.animateWithDuration(1, animations: { () -> Void in
           self.barChart2.setValue(Float(value), animated: true)
-          self.lblPercentagr2.text = "\(self.barChart2.value * 100)%"
+          self.bar2Chart2.setValue(Float(value), animated: true)
+          self.bar3Chart2.setValue(Float(value), animated: true)
+          
+          self.lblPercentagr2.text = "\(self.barChart2.value)%"
           }, completion: nil)
     }
   }
@@ -130,11 +156,15 @@ class ViewController: UIViewController {
   {
     UIView.animateWithDuration(0.1, animations: { () -> Void in
       self.barChart3.setValue(self.barChart3.value, animated: true)
+      self.bar2Chart3.setValue(self.bar2Chart3.value, animated: true)
+      self.bar3Chart3.setValue(self.bar3Chart3.value, animated: true)
       
       }) { (bol) -> Void in
         UIView.animateWithDuration(1, animations: { () -> Void in
-          self.barChart3. setValue(Float(value), animated: true)
-          self.lblPercentage3.text = "\(self.barChart3.value * 100)%"
+          self.barChart3.setValue(Float(value), animated: true)
+          self.bar2Chart3.setValue(Float(value), animated: true)
+          self.bar3Chart3.setValue(Float(value), animated: true)
+          self.lblPercentage3.text = "\(self.barChart3.value)%"
           }, completion: nil)
     }
   }
@@ -173,36 +203,40 @@ class ViewController: UIViewController {
       break
     }
     
-    var count = players[0]["playerTrackingData"]!!.count
+    var count = players[0]["trackingData"]!!.count
     if seconds < count
     {
       for player in players
       {
         //        //Fixing player tracking sensor
-        //        if player["playerTrackingData"]!!.count < count
+        //        if player["trackingData"]!!.count < count
         //        {
-        //          count = player["playerTrackingData"]!!.count
+        //          count = player["trackingData"]!!.count
         //        }
-        if seconds < player["playerTrackingData"]!!.count
+        if seconds < player["trackingData"]!!.count
         {
-          let x = player["playerTrackingData"]!![seconds]["x"]
-          let y = player["playerTrackingData"]!![seconds]["y"]
+          let x = player["trackingData"]!![seconds]["x"]
+          let y = player["trackingData"]!![seconds]["y"]
           
           
           if seconds > 0
           {
-            let xPrevious = player["playerTrackingData"]!![seconds - 1]["x"]
-            let yPrevious = player["playerTrackingData"]!![seconds - 1]["y"]
+            let xPrevious = player["trackingData"]!![seconds - 1]["x"]
+            let yPrevious = player["trackingData"]!![seconds - 1]["y"]
             self.removeFromField(xPrevious as! Double, y: yPrevious as! Double)
           }
-          
-          if player["nflId"] as! Int == 71281 || player["nflId"] as! Int == 2495312
+          let dic = player as! [String:AnyObject]
+          if let id = player["nflId"]
           {
-            self.addToFIeld(x as! Double, y: y as! Double,team:team, playerType: .Quarterback)
-          }
-          else
-          {
-            self.addToFIeld(x as! Double, y: y as! Double,team:team, playerType: .Other)
+            let strId = "\(id)"
+            if strId.toInt() == 71281 || strId.toInt() == 2495312
+            {
+              self.addToFIeld(x as! Double, y: y as! Double,team:team, playerType: .Quarterback)
+            }
+            else
+            {
+              self.addToFIeld(x as! Double, y: y as! Double,team:team, playerType: .Other)
+            }
           }
         }
       }
@@ -215,6 +249,11 @@ class ViewController: UIViewController {
         self.fieldView.removeSubviews()
         self.play += 1
         self.parsePlay(play + 1)
+        let probabilities = readAlgorithm(play + 1)
+        self.viewSliders.hidden = false
+        self.changeSliderTo((probabilities["1"]!["probability"]?.doubleValue)!)
+        self.changeSlider2To((probabilities["2"]!["probability"]?.doubleValue)!)
+        self.changeSlider3To((probabilities["3"]!["probability"]?.doubleValue)!)
       }
     }
   }
@@ -261,7 +300,7 @@ class ViewController: UIViewController {
   
   func readJSON(index:Int) -> Dictionary<String,AnyObject>
   {
-    let path = NSBundle.mainBundle().pathForResource("plays", ofType: "json")
+    let path = NSBundle.mainBundle().pathForResource("analysis-4", ofType: "json")
     let jsonData = NSData(contentsOfFile: path!)
     
     do
@@ -269,6 +308,21 @@ class ViewController: UIViewController {
       let jsonArray = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: .MutableContainers) as! [AnyObject]
       
       return jsonArray[index] as! Dictionary<String,AnyObject>
+    }
+    catch{}
+    
+    return [:]
+  }
+  
+  func readAlgorithm(index:Int) -> Dictionary<String,Dictionary<String,AnyObject>>
+  {
+    let path = NSBundle.mainBundle().pathForResource("data1", ofType: "json")
+    let jsonData = NSData(contentsOfFile: path!)
+    do
+    {
+      let jsonArray = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: .MutableContainers) as! [AnyObject]
+      
+      return jsonArray[index] as!  Dictionary<String,Dictionary<String,AnyObject>>
     }
     catch{}
     
