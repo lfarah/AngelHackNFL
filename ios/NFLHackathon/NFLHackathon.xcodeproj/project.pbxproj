@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C2326B0D1C79425100730D61 /* plays.json in Resources */ = {isa = PBXBuildFile; fileRef = C2326B0C1C79425100730D61 /* plays.json */; };
+		C2326B0F1C79725200730D61 /* touchdown and background.png in Resources */ = {isa = PBXBuildFile; fileRef = C2326B0E1C79725200730D61 /* touchdown and background.png */; };
 		C27FE9C11C79000000C3E7BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27FE9C01C79000000C3E7BC /* AppDelegate.swift */; };
 		C27FE9C31C79000000C3E7BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27FE9C21C79000000C3E7BC /* ViewController.swift */; };
 		C27FE9C61C79000000C3E7BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27FE9C41C79000000C3E7BC /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		C2326B0C1C79425100730D61 /* plays.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plays.json; sourceTree = "<group>"; };
+		C2326B0E1C79725200730D61 /* touchdown and background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "touchdown and background.png"; sourceTree = "<group>"; };
 		C27FE9BD1C79000000C3E7BC /* NFLHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFLHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27FE9C01C79000000C3E7BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C27FE9C21C79000000C3E7BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		C27FE9B41C79000000C3E7BC = {
 			isa = PBXGroup;
 			children = (
+				C2326B0E1C79725200730D61 /* touchdown and background.png */,
 				C2326B0C1C79425100730D61 /* plays.json */,
 				C27FEA151C790BEA00C3E7BC /* sample.json */,
 				C27FE9D21C79009500C3E7BC /* EZSwiftExtensions */,
@@ -241,6 +244,7 @@
 				C27FEA161C790BEA00C3E7BC /* sample.json in Resources */,
 				C27FE9C81C79000000C3E7BC /* Assets.xcassets in Resources */,
 				C27FE9C61C79000000C3E7BC /* Main.storyboard in Resources */,
+				C2326B0F1C79725200730D61 /* touchdown and background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,10 +12,18 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var fieldView: UIView!
   
+  var quarter = 0
+  var currentPlay = 0
   enum Team
   {
     case Home
     case Away
+  }
+  
+  enum PlayerType
+  {
+    case Quarterback
+    case Other
   }
   
   var play = 0
@@ -31,18 +39,24 @@ class ViewController: UIViewController {
     
     
     parsePlay(0)
+    
+//    self.fieldView.backgroundColor = UIColor(patternImage: UIImage(named: "touchdown and background")!)
+    
   }
   
   func parsePlay(play:Int)
   {
-    let sample = self.readJSON(play)
-    
-    var seconds = 0
-    self.timer = NSTimer.runThisEvery(seconds: 0.1) {
-      (timer) -> Void in
-      self.parsePlayersTracking(play,seconds: seconds,team: .Home,sample: sample)
-      self.parsePlayersTracking(play,seconds: seconds,team:.Away,sample: sample)
-      seconds++
+    if play <= 9
+    {
+      let sample = self.readJSON(play)
+      
+      var seconds = 0
+      self.timer = NSTimer.runThisEvery(seconds: 0.1) {
+        (timer) -> Void in
+        self.parsePlayersTracking(play,seconds: seconds,team: .Home,sample: sample)
+        self.parsePlayersTracking(play,seconds: seconds,team:.Away,sample: sample)
+        seconds++
+      }
     }
   }
   func parsePlayersTracking(play:Int,seconds:Int,team:Team,sample: Dictionary<String, AnyObject>)
@@ -82,7 +96,26 @@ class ViewController: UIViewController {
             let yPrevious = player["playerTrackingData"]!![seconds - 1]["y"]
             self.removeFromField(xPrevious as! Double, y: yPrevious as! Double)
           }
-          self.addToFIeld(x as! Double, y: y as! Double,team:team)
+          
+          if player["nflId"] as! Int == 71281 || player["nflId"] as! Int == 2495312
+          {
+            if play == currentPlay
+            {
+              
+            }
+            else
+            {
+              self.addToFIeld(x as! Double, y: y as! Double,team:team, playerType: .Quarterback)
+              print(quarter)
+              quarter++
+              currentPlay++
+            }
+          }
+          else
+          {
+            self.addToFIeld(x as! Double, y: y as! Double,team:team, playerType: .Other)
+            
+          }
         }
       }
     }
@@ -97,7 +130,8 @@ class ViewController: UIViewController {
       }
     }
   }
-  func addToFIeld(x:Double,y:Double,team:Team)
+  
+  func addToFIeld(x:Double,y:Double,team:Team,playerType: PlayerType)
   {
     let view = UIView(x: x.toFloat * 6.14, y: y.toFloat * 7.37, w: 20, h: 20)
     
@@ -113,6 +147,11 @@ class ViewController: UIViewController {
     }
     
     view.makeCircular()
+    
+    if playerType == PlayerType.Quarterback
+    {
+      view.makeQuarterBack()
+    }
     fieldView.addSubview(view)
   }
   
@@ -158,9 +197,32 @@ class ViewController: UIViewController {
 
 
 extension UIView {
+  
+  func setBackgroundImage(image: UIImage) {
+    let imageView = UIImageView(frame: self.frame)
+    imageView.image = image
+//    imageView.
+    self.addSubview(imageView)
+    self.sendSubviewToBack(imageView)
+  }
+  
+  func makeQuarterBack()
+  {
+    self.layer.borderColor = UIColor.redColor().CGColor
+    self.layer.backgroundColor = UIColor.redColor().CGColor
+  }
   func makeCircular() {
     let cntr:CGPoint = self.center
     self.layer.cornerRadius = min(self.frame.size.height, self.frame.size.width) / 2.0
+    self.layer.borderColor = UIColor.whiteColor().CGColor
+    self.layer.borderWidth = 3
+    self.layer.shadowOffset = CGSize(width: 10, height: 10)
+    let shadowPath = UIBezierPath(rect: self.bounds)
+    self.layer.masksToBounds = false
+    self.layer.shadowColor = UIColor.blackColor().CGColor
+    self.layer.shadowOffset = CGSize(width: 2, height: 2)
+    self.layer.shadowOpacity = 0.2
+    self.layer.shadowPath = shadowPath.CGPath
     self.center = cntr
   }
 }
