@@ -23,7 +23,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touchdown and background.png" translatesAutoresizingMaskIntoConstraints="NO" id="h0e-w5-HaG">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="737" height="393"/>
+                                            <rect key="frame" x="8" y="-6" width="734" height="395"/>
                                         </variation>
                                     </imageView>
                                 </subviews>
@@ -34,7 +34,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="21" width="737" height="393"/>
+                                    <rect key="frame" x="-5" y="28" width="742" height="386"/>
                                     <mask key="subviews">
                                         <include reference="h0e-w5-HaG"/>
                                     </mask>
@@ -43,31 +43,243 @@
                                     <rect key="frame" x="0.0" y="0.0" width="736" height="326"/>
                                 </variation>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time score background (2).png" translatesAutoresizingMaskIntoConstraints="NO" id="M2e-sN-1Zi">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="292" y="0.0" width="148" height="95"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ki-Hy-yxW">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="5" height="20"/>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="278" y="-15" width="176" height="88"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7V4-vH-NMC">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="332" y="42" width="71" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGB-mY-feX">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="force touch icon.png"/>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="531" y="356" width="85" height="58"/>
+                                </variation>
+                                <connections>
+                                    <action selector="showHideSliders:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2u7-bV-k2f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOY-Qm-iVy">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="600" y="358" width="85" height="58"/>
+                                </variation>
+                                <connections>
+                                    <action selector="showHideSliders:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IiA-UL-MgL"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYy-Yz-TdB">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="force touch (1).png" translatesAutoresizingMaskIntoConstraints="NO" id="rR1-R2-JYU">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="-8" y="0.0" width="429" height="292"/>
+                                        </variation>
+                                    </imageView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="M9R-Fp-hD0">
+                                        <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="minimumTrackTintColor" red="0.0" green="0.043137254899999998" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="maximumTrackTintColor" red="0.0" green="0.043137254899999998" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="76" y="180" width="222" height="31"/>
+                                        </variation>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Egd-mA-fUr">
+                                        <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="minimumTrackTintColor" red="0.0" green="0.043137254899999998" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="maximumTrackTintColor" red="0.0" green="0.043137254899999998" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="76" y="102" width="222" height="31"/>
+                                        </variation>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="d4Z-k3-8Bc">
+                                        <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="minimumTrackTintColor" red="0.0" green="0.043137254899999998" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="maximumTrackTintColor" red="0.0" green="0.043137254899999998" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="76" y="27" width="222" height="31"/>
+                                        </variation>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="89%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDe-z7-ETl">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="316" y="184" width="50" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="89%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfv-kF-giC">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="316" y="36" width="50" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tom brady (1).png" translatesAutoresizingMaskIntoConstraints="NO" id="o4a-5F-38l">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="20" y="20" width="44" height="44"/>
+                                        </variation>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tom brady (1).png" translatesAutoresizingMaskIntoConstraints="NO" id="di6-TQ-8oM">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="20" y="95" width="44" height="44"/>
+                                        </variation>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tom brady (1).png" translatesAutoresizingMaskIntoConstraints="NO" id="4Lg-o4-iSD">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="20" y="173" width="44" height="44"/>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="89%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQh-Hv-4N7">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="316" y="106" width="50" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzz-tj-pLL">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="348" y="234" width="56" height="58"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="showHideSliders:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hmr-Na-JQa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="rR1-R2-JYU"/>
+                                        <exclude reference="M9R-Fp-hD0"/>
+                                        <exclude reference="Egd-mA-fUr"/>
+                                        <exclude reference="d4Z-k3-8Bc"/>
+                                        <exclude reference="XDe-z7-ETl"/>
+                                        <exclude reference="Kfv-kF-giC"/>
+                                        <exclude reference="o4a-5F-38l"/>
+                                        <exclude reference="di6-TQ-8oM"/>
+                                        <exclude reference="4Lg-o4-iSD"/>
+                                        <exclude reference="TQh-Hv-4N7"/>
+                                        <exclude reference="Mzz-tj-pLL"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="195" y="123" width="412" height="291"/>
+                                    <mask key="subviews">
+                                        <include reference="rR1-R2-JYU"/>
+                                        <include reference="M9R-Fp-hD0"/>
+                                        <include reference="Egd-mA-fUr"/>
+                                        <include reference="d4Z-k3-8Bc"/>
+                                        <include reference="XDe-z7-ETl"/>
+                                        <include reference="Kfv-kF-giC"/>
+                                        <include reference="o4a-5F-38l"/>
+                                        <include reference="di6-TQ-8oM"/>
+                                        <include reference="4Lg-o4-iSD"/>
+                                        <include reference="TQh-Hv-4N7"/>
+                                        <include reference="Mzz-tj-pLL"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.42745098040000001" green="0.68235294120000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="gm1-Te-VWu"/>
+                                <exclude reference="M2e-sN-1Zi"/>
+                                <exclude reference="5Ki-Hy-yxW"/>
+                                <exclude reference="7V4-vH-NMC"/>
+                                <exclude reference="DGB-mY-feX"/>
+                                <exclude reference="oOY-Qm-iVy"/>
+                                <exclude reference="fYy-Yz-TdB"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="subviews">
                                 <include reference="gm1-Te-VWu"/>
+                                <include reference="M2e-sN-1Zi"/>
+                                <include reference="5Ki-Hy-yxW"/>
+                                <include reference="7V4-vH-NMC"/>
+                                <include reference="DGB-mY-feX"/>
+                                <include reference="oOY-Qm-iVy"/>
+                                <include reference="fYy-Yz-TdB"/>
                             </mask>
                         </variation>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="barChart" destination="M9R-Fp-hD0" id="6ig-dj-Hzf"/>
+                        <outlet property="barChart2" destination="Egd-mA-fUr" id="Fur-Fn-kdL"/>
+                        <outlet property="barChart3" destination="d4Z-k3-8Bc" id="eSa-9J-Y4n"/>
                         <outlet property="fieldView" destination="gm1-Te-VWu" id="ZEL-ig-vsF"/>
+                        <outlet property="lblPercentage3" destination="Kfv-kF-giC" id="7zo-do-Xuk"/>
+                        <outlet property="lblPercentagr" destination="XDe-z7-ETl" id="45l-zD-kY1"/>
+                        <outlet property="lblPercentagr2" destination="TQh-Hv-4N7" id="7lh-uZ-mse"/>
+                        <outlet property="lblTime" destination="5Ki-Hy-yxW" id="svJ-j5-Pc4"/>
+                        <outlet property="showHideSliders" destination="DGB-mY-feX" id="Nxl-gt-o7q"/>
+                        <outlet property="viewSliders" destination="fYy-Yz-TdB" id="qJe-qN-Z30"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304.5" y="387"/>
+            <point key="canvasLocation" x="282.75" y="523.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hbK-IT-7Hm">
+            <objects>
+                <viewController id="jhO-1z-QpJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wDK-fv-NuM"/>
+                        <viewControllerLayoutGuide type="bottom" id="UyK-Jq-EsV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F9E-jb-ej2">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5F7-f8-gmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="299.25" y="1270.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="force touch (1).png" width="1569" height="975"/>
+        <image name="force touch icon.png" width="303" height="162"/>
+        <image name="time score background (2).png" width="513" height="243"/>
+        <image name="tom brady (1).png" width="183" height="177"/>
         <image name="touchdown and background.png" width="2229" height="1263"/>
     </resources>
 </document>

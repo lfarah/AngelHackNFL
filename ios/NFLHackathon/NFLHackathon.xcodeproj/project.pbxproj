@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		C2326B0D1C79425100730D61 /* plays.json in Resources */ = {isa = PBXBuildFile; fileRef = C2326B0C1C79425100730D61 /* plays.json */; };
-		C2326B0F1C79725200730D61 /* touchdown and background.png in Resources */ = {isa = PBXBuildFile; fileRef = C2326B0E1C79725200730D61 /* touchdown and background.png */; };
+		C2326B111C797D0800730D61 /* asd.json in Resources */ = {isa = PBXBuildFile; fileRef = C2326B101C797D0800730D61 /* asd.json */; };
+		C2326B151C79ACC800730D61 /* tom brady.png in Resources */ = {isa = PBXBuildFile; fileRef = C2326B141C79ACC800730D61 /* tom brady.png */; };
+		C2326B171C79ACD700730D61 /* tom brady (1).png in Resources */ = {isa = PBXBuildFile; fileRef = C2326B161C79ACD700730D61 /* tom brady (1).png */; };
+		C2326B191C79AF5500730D61 /* touchdown and background.png in Resources */ = {isa = PBXBuildFile; fileRef = C2326B181C79AF5500730D61 /* touchdown and background.png */; };
+		C2326B1D1C79B4CD00730D61 /* force touch (1).png in Resources */ = {isa = PBXBuildFile; fileRef = C2326B1C1C79B4CD00730D61 /* force touch (1).png */; };
+		C2326B1F1C79C36100730D61 /* time score background (1).png in Resources */ = {isa = PBXBuildFile; fileRef = C2326B1E1C79C36100730D61 /* time score background (1).png */; };
+		C2326B211C79C3AC00730D61 /* force touch icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C2326B201C79C3AC00730D61 /* force touch icon.png */; };
+		C2326B231C79C40300730D61 /* time score background (2).png in Resources */ = {isa = PBXBuildFile; fileRef = C2326B221C79C40300730D61 /* time score background (2).png */; };
 		C27FE9C11C79000000C3E7BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27FE9C01C79000000C3E7BC /* AppDelegate.swift */; };
 		C27FE9C31C79000000C3E7BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27FE9C21C79000000C3E7BC /* ViewController.swift */; };
 		C27FE9C61C79000000C3E7BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27FE9C41C79000000C3E7BC /* Main.storyboard */; };
@@ -52,7 +59,14 @@
 
 /* Begin PBXFileReference section */
 		C2326B0C1C79425100730D61 /* plays.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plays.json; sourceTree = "<group>"; };
-		C2326B0E1C79725200730D61 /* touchdown and background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "touchdown and background.png"; sourceTree = "<group>"; };
+		C2326B101C797D0800730D61 /* asd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = asd.json; sourceTree = "<group>"; };
+		C2326B141C79ACC800730D61 /* tom brady.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tom brady.png"; sourceTree = "<group>"; };
+		C2326B161C79ACD700730D61 /* tom brady (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tom brady (1).png"; sourceTree = "<group>"; };
+		C2326B181C79AF5500730D61 /* touchdown and background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "touchdown and background.png"; sourceTree = "<group>"; };
+		C2326B1C1C79B4CD00730D61 /* force touch (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "force touch (1).png"; sourceTree = "<group>"; };
+		C2326B1E1C79C36100730D61 /* time score background (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time score background (1).png"; sourceTree = "<group>"; };
+		C2326B201C79C3AC00730D61 /* force touch icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "force touch icon.png"; sourceTree = "<group>"; };
+		C2326B221C79C40300730D61 /* time score background (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time score background (2).png"; sourceTree = "<group>"; };
 		C27FE9BD1C79000000C3E7BC /* NFLHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFLHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27FE9C01C79000000C3E7BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C27FE9C21C79000000C3E7BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +124,14 @@
 		C27FE9B41C79000000C3E7BC = {
 			isa = PBXGroup;
 			children = (
-				C2326B0E1C79725200730D61 /* touchdown and background.png */,
+				C2326B221C79C40300730D61 /* time score background (2).png */,
+				C2326B201C79C3AC00730D61 /* force touch icon.png */,
+				C2326B1E1C79C36100730D61 /* time score background (1).png */,
+				C2326B1C1C79B4CD00730D61 /* force touch (1).png */,
+				C2326B181C79AF5500730D61 /* touchdown and background.png */,
+				C2326B141C79ACC800730D61 /* tom brady.png */,
+				C2326B161C79ACD700730D61 /* tom brady (1).png */,
+				C2326B101C797D0800730D61 /* asd.json */,
 				C2326B0C1C79425100730D61 /* plays.json */,
 				C27FEA151C790BEA00C3E7BC /* sample.json */,
 				C27FE9D21C79009500C3E7BC /* EZSwiftExtensions */,
@@ -241,10 +262,17 @@
 			files = (
 				C27FE9CB1C79000000C3E7BC /* LaunchScreen.storyboard in Resources */,
 				C2326B0D1C79425100730D61 /* plays.json in Resources */,
+				C2326B151C79ACC800730D61 /* tom brady.png in Resources */,
+				C2326B231C79C40300730D61 /* time score background (2).png in Resources */,
+				C2326B211C79C3AC00730D61 /* force touch icon.png in Resources */,
+				C2326B171C79ACD700730D61 /* tom brady (1).png in Resources */,
+				C2326B1F1C79C36100730D61 /* time score background (1).png in Resources */,
 				C27FEA161C790BEA00C3E7BC /* sample.json in Resources */,
 				C27FE9C81C79000000C3E7BC /* Assets.xcassets in Resources */,
+				C2326B191C79AF5500730D61 /* touchdown and background.png in Resources */,
+				C2326B111C797D0800730D61 /* asd.json in Resources */,
+				C2326B1D1C79B4CD00730D61 /* force touch (1).png in Resources */,
 				C27FE9C61C79000000C3E7BC /* Main.storyboard in Resources */,
-				C2326B0F1C79725200730D61 /* touchdown and background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

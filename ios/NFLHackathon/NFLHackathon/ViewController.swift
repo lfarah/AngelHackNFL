@@ -10,8 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
   
+  @IBOutlet weak var viewSliders: UIView!
   @IBOutlet weak var fieldView: UIView!
+  @IBOutlet weak var lblTime: UILabel!
+  @IBOutlet weak var shadowView: UIView!
+  @IBOutlet weak var barChart: UISlider!
+  @IBOutlet weak var barChart2: UISlider!
+  @IBOutlet weak var barChart3: UISlider!
+  @IBOutlet weak var lblPercentagr: UILabel!
+  @IBOutlet weak var lblPercentagr2: UILabel!
   
+  @IBOutlet weak var lblPercentage3: UILabel!
+  
+  var timerSliders = NSTimer()
   var quarter = 0
   var currentPlay = 0
   enum Team
@@ -33,16 +44,102 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    
     //6.141666667
     //7.373358349
     
     
     parsePlay(0)
+//    lblTime.setCornerRadius(radius: 10)
+//    lblTime.addBorder(width: 3, color: .whiteColor())
     
-//    self.fieldView.backgroundColor = UIColor(patternImage: UIImage(named: "touchdown and background")!)
-    
+//    self.viewSliders.setCornerRadius(radius: 10)
+//    self.viewSliders.addBorder(width: 4, color: .whiteColor())
+//    let shadowPath = UIBezierPath(rect: self.viewSliders.bounds)
+//    self.viewSliders.layer.masksToBounds = false
+//    self.viewSliders.layer.shadowColor = UIColor.blackColor().CGColor
+//    self.viewSliders.layer.shadowOffset = CGSize(width: 2, height: 2)
+//    self.viewSliders.layer.shadowOpacity = 0.2
+//    self.viewSliders.layer.shadowPath = shadowPath.CGPath
+
   }
+  
+  @IBOutlet weak var showHideSliders: UIButton!
+  
+  func simulateSliders()
+  {
+    let arrSliderValue = [0.4,0.9,0.1,0.3,0.2,0.8]
+    let arrSliderValue2 = [0.9,0.4,0.1,0.5,0.7,0.2]
+    let arrSliderValue3 = [0.6,0.3,0.1,0.1,0.8,0.5]
+    
+    var count = 0
+    self.timerSliders = NSTimer.runThisEvery(seconds: 2) { (timer) -> Void in
+      if count < arrSliderValue.count
+      {
+      self.changeSliderTo(arrSliderValue[count])
+        self.changeSlider2To(arrSliderValue2[count])
+        self.changeSlider3To(arrSliderValue3[count])
+        
+        count++
+      }
+      else
+      {
+        self.timerSliders.invalidate()
+      }
+    }
+  }
+  @IBAction func showHideSliders(sender: AnyObject)
+  {
+    if self.viewSliders.hidden
+    {
+      self.viewSliders.hidden = false
+      simulateSliders()
+      showHideSliders.setBackgroundImage(UIImage())
+    }
+    else
+    {
+      self.viewSliders.hidden = true
+      self.timerSliders.invalidate()
+      showHideSliders.setBackgroundImage(UIImage(named: "force touch icon")!)
+    }
+  }
+  func changeSliderTo(value:Double)
+  {
+    UIView.animateWithDuration(0.1, animations: { () -> Void in
+      self.barChart.setValue(self.barChart.value, animated: true)
+      
+      }) { (bol) -> Void in
+        UIView.animateWithDuration(1, animations: { () -> Void in
+          self.barChart.setValue(Float(value), animated: true)
+          self.lblPercentagr.text = "\(self.barChart.value * 100)%"
+          }, completion: nil)
+    }
+  }
+  func changeSlider2To(value:Double)
+  {
+    UIView.animateWithDuration(0.1, animations: { () -> Void in
+      self.barChart2.setValue(self.barChart2.value, animated: true)
+      
+      }) { (bol) -> Void in
+        UIView.animateWithDuration(1, animations: { () -> Void in
+          self.barChart2.setValue(Float(value), animated: true)
+          self.lblPercentagr2.text = "\(self.barChart2.value * 100)%"
+          }, completion: nil)
+    }
+  }
+  func changeSlider3To(value:Double)
+  {
+    UIView.animateWithDuration(0.1, animations: { () -> Void in
+      self.barChart3.setValue(self.barChart3.value, animated: true)
+      
+      }) { (bol) -> Void in
+        UIView.animateWithDuration(1, animations: { () -> Void in
+          self.barChart3.setValue(Float(value), animated: true)
+          self.lblPercentage3.text = "\(self.barChart3.value * 100)%"
+          }, completion: nil)
+    }
+  }
+  
+  
   
   func parsePlay(play:Int)
   {
@@ -55,6 +152,8 @@ class ViewController: UIViewController {
         (timer) -> Void in
         self.parsePlayersTracking(play,seconds: seconds,team: .Home,sample: sample)
         self.parsePlayersTracking(play,seconds: seconds,team:.Away,sample: sample)
+        let secods = (Double(seconds) * 0.1).getRoundedByPlaces(1)
+        self.lblTime.text = "\(secods)"
         seconds++
       }
     }
@@ -99,22 +198,11 @@ class ViewController: UIViewController {
           
           if player["nflId"] as! Int == 71281 || player["nflId"] as! Int == 2495312
           {
-            if play == currentPlay
-            {
-              
-            }
-            else
-            {
-              self.addToFIeld(x as! Double, y: y as! Double,team:team, playerType: .Quarterback)
-              print(quarter)
-              quarter++
-              currentPlay++
-            }
+            self.addToFIeld(x as! Double, y: y as! Double,team:team, playerType: .Quarterback)
           }
           else
           {
             self.addToFIeld(x as! Double, y: y as! Double,team:team, playerType: .Other)
-            
           }
         }
       }
@@ -201,15 +289,18 @@ extension UIView {
   func setBackgroundImage(image: UIImage) {
     let imageView = UIImageView(frame: self.frame)
     imageView.image = image
-//    imageView.
+    //    imageView.
     self.addSubview(imageView)
     self.sendSubviewToBack(imageView)
   }
   
   func makeQuarterBack()
   {
-    self.layer.borderColor = UIColor.redColor().CGColor
-    self.layer.backgroundColor = UIColor.redColor().CGColor
+    //    self.layer.backgroundColor = UIColor.redColor().CGColor
+    self.w = 30
+    self.h = 30
+    self.makeCircular()
+    self.layer.borderColor = UIColor.yellowColor().CGColor
   }
   func makeCircular() {
     let cntr:CGPoint = self.center

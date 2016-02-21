@@ -225,7 +225,7 @@ extension UIView {
   
   public func removeSubviews() {
     for subview in subviews {
-      if subviews.indexOf(subview) > 1
+      if subviews.indexOf(subview) > 0
       {
         subview.removeFromSuperview()
       }
