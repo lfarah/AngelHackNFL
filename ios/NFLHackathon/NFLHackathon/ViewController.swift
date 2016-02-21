@@ -133,7 +133,7 @@ class ViewController: UIViewController {
       
       }) { (bol) -> Void in
         UIView.animateWithDuration(1, animations: { () -> Void in
-          self.barChart3.setValue(Float(value), animated: true)
+          self.barChart3. setValue(Float(value), animated: true)
           self.lblPercentage3.text = "\(self.barChart3.value * 100)%"
           }, completion: nil)
     }
