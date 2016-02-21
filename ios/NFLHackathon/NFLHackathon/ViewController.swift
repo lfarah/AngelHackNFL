@@ -17,7 +17,11 @@ class ViewController: UIViewController {
     case Home
     case Away
   }
-  override func viewDidLoad() {
+  
+  var play = 0
+  var timer = NSTimer()
+  override func viewDidLoad()
+  {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
@@ -25,59 +29,74 @@ class ViewController: UIViewController {
     //6.141666667
     //7.373358349
     
-    let sample = self.readJSON()
     
-    self.parsePlayersTracking(.Home,sample: sample)
-    self.parsePlayersTracking(.Away,sample: sample)
-    
+    parsePlay(0)
   }
   
-  func parsePlayersTracking(team:Team,sample: Dictionary<String, AnyObject>)
+  func parsePlay(play:Int)
+  {
+    let sample = self.readJSON(play)
+    
+    var seconds = 0
+    self.timer = NSTimer.runThisEvery(seconds: 0.1) {
+      (timer) -> Void in
+      self.parsePlayersTracking(play,seconds: seconds,team: .Home,sample: sample)
+      self.parsePlayersTracking(play,seconds: seconds,team:.Away,sample: sample)
+      seconds++
+    }
+  }
+  func parsePlayersTracking(play:Int,seconds:Int,team:Team,sample: Dictionary<String, AnyObject>)
   {
     var players = Array<AnyObject>()
-    var seconds = 0
-    var color = UIColor()
     switch team
     {
     case .Home:
       players = sample["homeTrackingData"] as! Array<AnyObject>
-      color = .orangeColor()
       break
       
     case .Away:
       players = sample["awayTrackingData"] as! Array<AnyObject>
-      color = .blueColor()
       
       break
     }
     
-    let timer = NSTimer.runThisEvery(seconds: 0.1) { (timer) -> Void in
+    var count = players[0]["playerTrackingData"]!!.count
+    if seconds < count
+    {
       for player in players
       {
-        if seconds == player["playerTrackingData"]!!.count
+        //        //Fixing player tracking sensor
+        //        if player["playerTrackingData"]!!.count < count
+        //        {
+        //          count = player["playerTrackingData"]!!.count
+        //        }
+        if seconds < player["playerTrackingData"]!!.count
         {
-          timer.invalidate()
-          seconds = seconds - 1
+          let x = player["playerTrackingData"]!![seconds]["x"]
+          let y = player["playerTrackingData"]!![seconds]["y"]
+          
+          
+          if seconds > 0
+          {
+            let xPrevious = player["playerTrackingData"]!![seconds - 1]["x"]
+            let yPrevious = player["playerTrackingData"]!![seconds - 1]["y"]
+            self.removeFromField(xPrevious as! Double, y: yPrevious as! Double)
+          }
+          self.addToFIeld(x as! Double, y: y as! Double,team:team)
         }
-        let x = player["playerTrackingData"]!![seconds]["x"]
-        let y = player["playerTrackingData"]!![seconds]["y"]
-        
-        
-        if seconds > 0
-        {
-          let xPrevious = player["playerTrackingData"]!![seconds - 1]["x"]
-          let yPrevious = player["playerTrackingData"]!![seconds - 1]["y"]
-          self.removeFromField(xPrevious as! Double, y: yPrevious as! Double)
-        }
-        self.addToFIeld(x as! Double, y: y as! Double,team:team)
-        
       }
-      
-      seconds++
     }
-    
+    else
+    {
+      if team == .Away
+      {
+        self.timer.invalidate()
+        self.fieldView.removeSubviews()
+        self.play += 1
+        self.parsePlay(play + 1)
+      }
+    }
   }
-  
   func addToFIeld(x:Double,y:Double,team:Team)
   {
     let view = UIView(x: x.toFloat * 6.14, y: y.toFloat * 7.37, w: 20, h: 20)
@@ -113,16 +132,16 @@ class ViewController: UIViewController {
   
   
   
-  func readJSON() -> Dictionary<String,AnyObject>
+  func readJSON(index:Int) -> Dictionary<String,AnyObject>
   {
-    let path = NSBundle.mainBundle().pathForResource("sample", ofType: "json")
+    let path = NSBundle.mainBundle().pathForResource("plays", ofType: "json")
     let jsonData = NSData(contentsOfFile: path!)
     
     do
     {
-      let jsonDict = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: .MutableContainers)
+      let jsonArray = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: .MutableContainers) as! [AnyObject]
       
-      return jsonDict as! Dictionary<String,AnyObject>
+      return jsonArray[index] as! Dictionary<String,AnyObject>
     }
     catch{}
     
