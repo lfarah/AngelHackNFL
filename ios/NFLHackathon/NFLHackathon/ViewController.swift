@@ -62,9 +62,9 @@ class ViewController: UIViewController {
     
     let probabilities = readAlgorithm(0)
     self.viewSliders.hidden = false
-    self.changeSliderTo((probabilities["1"]!["probability"]?.doubleValue)!)
-    self.changeSlider2To((probabilities["2"]!["probability"]?.doubleValue)!)
-    self.changeSlider3To((probabilities["3"]!["probability"]?.doubleValue)!)
+    //    self.changeSliderTo((probabilities["1"]!["probability"]?.doubleValue)!)
+    //    self.changeSlider2To((probabilities["2"]!["probability"]?.doubleValue)!)
+    //    self.changeSlider3To((probabilities["3"]!["probability"]?.doubleValue)!)
     
     //    lblTime.setCornerRadius(radius: 10)
     //    lblTime.addBorder(width: 3, color: .whiteColor())
@@ -118,8 +118,9 @@ class ViewController: UIViewController {
       showHideSliders.setBackgroundImage(UIImage(named: "force touch icon")!)
     }
   }
-  func changeSliderTo(value:Double)
+  func changeSliderTo(val:Int)
   {
+    let value = val.toDouble
     UIView.animateWithDuration(0.1, animations: { () -> Void in
       self.barChart.setValue(self.barChart.value, animated: true)
       self.bar2Chart.setValue(self.bar2Chart.value, animated: true)
@@ -135,8 +136,10 @@ class ViewController: UIViewController {
           }, completion: nil)
     }
   }
-  func changeSlider2To(value:Double)
+  func changeSlider2To(val:Int)
   {
+    let value = val.toDouble
+    
     UIView.animateWithDuration(0.1, animations: { () -> Void in
       self.barChart2.setValue(self.barChart2.value, animated: true)
       self.bar2Chart2.setValue(self.bar2Chart2.value, animated: true)
@@ -152,8 +155,10 @@ class ViewController: UIViewController {
           }, completion: nil)
     }
   }
-  func changeSlider3To(value:Double)
+  func changeSlider3To(val:Int)
   {
+    let value = val.toDouble
+    
     UIView.animateWithDuration(0.1, animations: { () -> Void in
       self.barChart3.setValue(self.barChart3.value, animated: true)
       self.bar2Chart3.setValue(self.bar2Chart3.value, animated: true)
@@ -218,6 +223,29 @@ class ViewController: UIViewController {
           let x = player["trackingData"]!![seconds]["x"]
           let y = player["trackingData"]!![seconds]["y"]
           
+          guard let track = player["trackingData"]!![seconds] else
+          {
+            return
+          }
+          if let isOffense = track["isOffense"] where isOffense != nil
+          {
+            let offStr = "\(isOffense as! NSNumber)"
+            if offStr.toInt() == 1
+            {
+//              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0))
+//                {
+//                  // Task
+//                  dispatch_async(dispatch_get_main_queue())
+//                    {
+//                      //UI
+                      self.changeSliderTo(player["trackingData"]!![seconds]["score"] as! Int)
+                      self.changeSlider2To(player["trackingData"]!![seconds]["synergy"] as! Int)
+                      self.changeSlider3To(player["trackingData"]!![seconds]["score"] as! Int)
+//                  }
+//              }
+          }
+          
+          }
           
           if seconds > 0
           {
@@ -251,9 +279,6 @@ class ViewController: UIViewController {
         self.parsePlay(play + 1)
         let probabilities = readAlgorithm(play + 1)
         self.viewSliders.hidden = false
-        self.changeSliderTo((probabilities["1"]!["probability"]?.doubleValue)!)
-        self.changeSlider2To((probabilities["2"]!["probability"]?.doubleValue)!)
-        self.changeSlider3To((probabilities["3"]!["probability"]?.doubleValue)!)
       }
     }
   }

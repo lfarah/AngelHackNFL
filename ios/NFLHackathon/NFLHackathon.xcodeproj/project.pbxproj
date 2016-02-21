@@ -23,7 +23,7 @@
 		C2326B311C7A22B100730D61 /* tom brady (1).png in Resources */ = {isa = PBXBuildFile; fileRef = C2326B301C7A22B100730D61 /* tom brady (1).png */; };
 		C2326B331C7A280100730D61 /* final force touch .png in Resources */ = {isa = PBXBuildFile; fileRef = C2326B321C7A280100730D61 /* final force touch .png */; };
 		C2326B371C7A294200730D61 /* analysis-2.json in Resources */ = {isa = PBXBuildFile; fileRef = C2326B361C7A294200730D61 /* analysis-2.json */; };
-		C2326B3D1C7A3ED000730D61 /* analysis-4.json in Resources */ = {isa = PBXBuildFile; fileRef = C2326B3C1C7A3ED000730D61 /* analysis-4.json */; };
+		C2326B431C7A4AF400730D61 /* analysis-4.json in Resources */ = {isa = PBXBuildFile; fileRef = C2326B421C7A4AF400730D61 /* analysis-4.json */; };
 		C27FE9C11C79000000C3E7BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27FE9C01C79000000C3E7BC /* AppDelegate.swift */; };
 		C27FE9C31C79000000C3E7BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27FE9C21C79000000C3E7BC /* ViewController.swift */; };
 		C27FE9C61C79000000C3E7BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27FE9C41C79000000C3E7BC /* Main.storyboard */; };
@@ -82,7 +82,7 @@
 		C2326B301C7A22B100730D61 /* tom brady (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tom brady (1).png"; sourceTree = "<group>"; };
 		C2326B321C7A280100730D61 /* final force touch .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "final force touch .png"; sourceTree = "<group>"; };
 		C2326B361C7A294200730D61 /* analysis-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "analysis-2.json"; sourceTree = "<group>"; };
-		C2326B3C1C7A3ED000730D61 /* analysis-4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "analysis-4.json"; sourceTree = "<group>"; };
+		C2326B421C7A4AF400730D61 /* analysis-4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "analysis-4.json"; sourceTree = "<group>"; };
 		C27FE9BD1C79000000C3E7BC /* NFLHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFLHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27FE9C01C79000000C3E7BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C27FE9C21C79000000C3E7BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		C27FE9B41C79000000C3E7BC = {
 			isa = PBXGroup;
 			children = (
-				C2326B3C1C7A3ED000730D61 /* analysis-4.json */,
+				C2326B421C7A4AF400730D61 /* analysis-4.json */,
 				C2326B361C7A294200730D61 /* analysis-2.json */,
 				C2326B321C7A280100730D61 /* final force touch .png */,
 				C2326B301C7A22B100730D61 /* tom brady (1).png */,
@@ -294,11 +294,11 @@
 				C2326B2A1C7A08ED00730D61 /* Group 6.png in Resources */,
 				C2326B211C79C3AC00730D61 /* force touch icon.png in Resources */,
 				C2326B1F1C79C36100730D61 /* time score background (1).png in Resources */,
-				C2326B3D1C7A3ED000730D61 /* analysis-4.json in Resources */,
 				C27FEA161C790BEA00C3E7BC /* sample.json in Resources */,
 				C2326B2C1C7A08ED00730D61 /* aaron dobson.png in Resources */,
 				C27FE9C81C79000000C3E7BC /* Assets.xcassets in Resources */,
 				C2326B311C7A22B100730D61 /* tom brady (1).png in Resources */,
+				C2326B431C7A4AF400730D61 /* analysis-4.json in Resources */,
 				C2326B371C7A294200730D61 /* analysis-2.json in Resources */,
 				C2326B191C79AF5500730D61 /* touchdown and background.png in Resources */,
 				C2326B111C797D0800730D61 /* asd.json in Resources */,
